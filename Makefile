@@ -20,7 +20,7 @@ run:
 		--restart unless-stopped \
 		-p 7396:7396 \
 		-v $(PWD)/workdir:/usr/src/app \
-		${IMAGE_NAME}:${TAG} \
+		${IMAGE_NAME}:${IMAGE_TAG} \
 		--user=${USER_NAME} \
 		--team=${TEAM} \
 		--gpu=${USE_GPU} \
