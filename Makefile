@@ -34,7 +34,7 @@ top:
 	docker top ${CONTAINER_NAME}
 
 stop:
-	docker stop ${CONTAINER_NAME}
+	docker stop ${CONTAINER_NAME} /${CONTAINER_NAME}
 
 clean: stop
 	docker rmi ${CONTAINER_NAME}
