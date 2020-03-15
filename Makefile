@@ -12,7 +12,7 @@ pull:
 
 run:
 	$(MAKE) pull
-	$(MAKE) stop || true
+	$(MAKE) clean || true
 	docker run \
 		-d \
 		--gpus all \
@@ -37,7 +37,7 @@ stop:
 	docker stop ${CONTAINER_NAME} /${CONTAINER_NAME}
 
 clean: stop
-	docker rmi ${CONTAINER_NAME}
+	docker rm ${CONTAINER_NAME} /${CONTAINER_NAME}
 
 exec:
 	docker exec -it ${CONTAINER_NAME} bash
