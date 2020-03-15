@@ -10,8 +10,8 @@ POWER_LEVEL := full
 pull:
 	docker pull ${IMAGE_NAME}:${IMAGE_TAG}
 
-run: pull
-	$(MAKE) build
+run:
+	$(MAKE) pull
 	$(MAKE) stop || true
 	docker run \
 		-d \
