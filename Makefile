@@ -1,15 +1,16 @@
-TAG := latest
-IMAGE_NAME := theculliganman/folding-at-home
+IMAGE_NAME = docker.pkg.github.com/theculliganman/folding-at-home/image
+IMAGE_TAG = latest
 CONTAINER_NAME := folding-at-home
+USER_NAME := theculliganman
+TEAM := 229500
+USE_GPU := true
+SMP_CLIENT := true 
+POWER_LEVEL := full
 
+pull:
+	docker pull ${IMAGE_NAME}:${IMAGE_TAG}
 
-build:
-	docker build -t ${IMAGE_NAME}:${TAG} .
-
-push: build
-	docker push ${IMAGE_NAME}:${TAG}
-
-run:
+run: pull
 	$(MAKE) build
 	$(MAKE) stop || true
 	docker run \
@@ -19,7 +20,12 @@ run:
 		--restart unless-stopped \
 		-p 7396:7396 \
 		-v $(PWD)/workdir:/usr/src/app \
-		${IMAGE_NAME}:${TAG}
+		${IMAGE_NAME}:${TAG} \
+		--user=${USER_NAME} \
+		--team=${TEAM} \
+		--gpu=${USE_GPU} \
+		--smp=${SMP_CLIENT} \
+		--power=${POWER_LEVEL}
 
 logs:
 	docker logs -f --tail=1000 ${CONTAINER_NAME}
