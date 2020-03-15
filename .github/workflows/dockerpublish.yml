@@ -70,5 +70,9 @@ jobs:
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
 
+          SHORT_SHA=$(echo ${GITHUB_SHA:0:7}
+
           docker tag image $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
+          docker tag image $IMAGE_ID:$SHORT_SHA
+          docker push $IMAGE_ID:$SHORT_SHA
