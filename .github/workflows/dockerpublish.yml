@@ -73,5 +73,5 @@ jobs:
 
           docker tag image $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
-          docker tag image $IMAGE_ID:$SHORT_SHA
-          docker push $IMAGE_ID:$SHORT_SHA
+          docker tag image $IMAGE_ID:master-$SHORT_SHA
+          docker push $IMAGE_ID:master-$SHORT_SHA
