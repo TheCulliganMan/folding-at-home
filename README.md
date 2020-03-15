@@ -5,7 +5,7 @@
 Docker GPU (opencl/cuda) container for running [Folding@Home](http://folding.stanford.edu/)
 
 ## First steps
-If you are intending to use your GPUS, make sure you have the follow the [instructions to get the nvidia-container-toolkit installed.](https://github.com/NVIDIA/nvidia-docker#ubuntu-16041804-debian-jessiestretchbuster).
+If you are intending to use your GPUS, make sure you have the follow the [instructions to get the nvidia-container-toolkit installed](https://github.com/NVIDIA/nvidia-docker#ubuntu-16041804-debian-jessiestretchbuster).
 
 The Makefile helps to inprove quality of life.  It has simplified command sets to view logs and such.
 
