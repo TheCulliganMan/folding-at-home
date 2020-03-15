@@ -1,4 +1,4 @@
-IMAGE_NAME = docker.pkg.github.com/theculliganman/folding-at-home/image
+IMAGE_NAME = theculliganman/folding-at-home
 IMAGE_TAG = latest
 CONTAINER_NAME := folding-at-home
 USER_NAME := theculliganman
